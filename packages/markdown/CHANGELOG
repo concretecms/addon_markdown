@@ -1,0 +1,4 @@
+1.0.1 - Replace direct json_encode call with a call to the concrete5 JSONHelper, which should ensure that older systems without json_encode can use the gallery block.
+
+
+1.0 - Initial Release
