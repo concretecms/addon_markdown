@@ -16,7 +16,11 @@ class MarkdownBlockController extends BlockController {
 			return $content;				
 		}
 		
-		
+		public function getSearchableContent(){
+			Loader::library('3rdparty/markdown');
+			$content = Markdown($this->content);
+			return $content;
+		}
 	}
 	
 ?>
