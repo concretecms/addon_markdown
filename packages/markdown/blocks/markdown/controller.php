@@ -1,5 +1,8 @@
 <?
 defined('C5_EXECUTE') or die(_("Access Denied."));
+
+use Michelf\Markdown;
+
 class MarkdownBlockController extends BlockController {
 		
 		var $pobj;
@@ -11,14 +14,12 @@ class MarkdownBlockController extends BlockController {
 		protected $btInterfaceHeight = "400";
 		
 		function getContent() {
-			Loader::library('3rdparty/markdown');
-			$content = Markdown($this->content);
+			$content = Markdown::defaultTransform($this->content);
 			return $content;				
 		}
 		
 		public function getSearchableContent(){
-			Loader::library('3rdparty/markdown');
-			$content = Markdown($this->content);
+			$content = Markdown::defaultTransform($this->content);
 			return $content;
 		}
 	}
